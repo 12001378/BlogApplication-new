@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>BLOG | home.</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" media="all" />
+</head>
+
+<body>
+	<section>
+	<img class="register_bg" style="width:100%" src="https://static.vecteezy.com/system/resources/thumbnails/008/199/073/small/people-hand-entering-password-code-on-virtual-login-form-cyber-internet-security-photo.jpg" alt="" />
+		<div class="Registercontainer mt-5">
+		
+			<div class="register_card mt-5 " style="width: 600px;">
+				<article class="card-body">
+					<h4 class="card-title text-center mb-4 mt-1">Sign up</h4>
+					<hr>
+					<p class="text-success text-center"></p>
+					<form th:action="@{/do_register}" th:object="${user}" method="post" >
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-user"></i>
+									</span>
+								</div>
+								<input name="name"  th:value="${user.name}"  class="form-control" placeholder="Username"
+									type="text">
+							</div>
+							<!-- input-group.// -->
+						</div>
+						<!-- form-group// -->
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> @ </span>
+								</div>
+								<input name="email"  th:value="${user.email}"  class="form-control" placeholder="Email"
+									type="email">
+							</div>
+							<!-- input-group.// -->
+						</div>
+						<!-- form-group// -->
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-lock"></i>
+									</span>
+								</div>
+								<input name="password" th:value="${user.password}"  class="form-control" placeholder="******" type="password">
+							</div>
+							<!-- input-group.// -->
+						</div>
+						<!-- form-group// -->
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> C </span>
+								</div>
+								<input name="content" th:value="${user.content}"  class="form-control"
+									placeholder="Type of content" type="text">
+							</div>
+							<!-- input-group.// -->
+						</div>
+						<!-- form-group// -->
+						<div class="form-group text-center">
+							<button type="submit" style="width:200px" class="btn btn-warning">
+								Register</button>
+						</div>
+						<!-- form-group// -->
+						<p class="text-center">
+							Already Registered? <a th:href="@{/signin}" class="btn_small">login</a>
+						</p>
+					</form>
+				</article>
+			</div>
+			<!-- card.// -->
+		</div>
+
+	</section>
+
+</body>
+</html>

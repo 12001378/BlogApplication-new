@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>user_dashboard</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" media="all" />
+</head>
+<body>
+	<section>
+		
+			<div class="row md-3">
+				<div class="column">
+					<div th:each="p : ${post}" class="card p-3 ">
+						<h3 th:text="${p.title}" class="title p-2"></h3>
+						<p th:text="${p.content}" class="content"></p>
+						<div class="container dflex">
+							<a class="btn btn-danger" th:href="@{/post/delete/{id}(id=${p.id})}">Delete</a> <a
+								class="btn btn-success" th:href="@{/post/edit/{id}(id=${p.id})}">Edit</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</section>
+</body>
+</html>

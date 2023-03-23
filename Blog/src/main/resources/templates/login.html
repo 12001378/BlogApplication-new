@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>BLOG | home.</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" media="all" />
+</head>
+<body class="loginbody">
+	<section>
+
+		<img class="register_bg" style="width: 100%"
+			src="https://static.vecteezy.com/system/resources/thumbnails/008/199/073/small/people-hand-entering-password-code-on-virtual-login-form-cyber-internet-security-photo.jpg"
+			alt="" />
+
+
+		<div class="logincontainer mt-5">
+
+			<div class="login_card mt-5 " style="width: 450px;">
+				<article class="card-body">
+					<h4 class="card-title text-center mb-4 mt-1 p-20px">Sign in</h4>
+					<form th:action="@{/signin}" method="post">
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> @ </span>
+								</div>
+								<input name="username" class="form-control" placeholder="Email"
+									type="email">
+							</div>
+							<!-- input-group.// -->
+						</div>
+						<!-- form-group// -->
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-lock"></i>
+									</span>
+								</div>
+								<input name="password" class="form-control" placeholder="******" type="password">
+							</div>
+							<!-- input-group.// -->
+						</div>
+						<div class="btn-container text-center">
+						<button type="submit" style="width:200px;"class="btn btn-warning">Submit</button>
+						</div>
+						<p class="text-center">
+							Don't have an account? <a th:href="@{/register}" class="btn_small">register now!</a>
+						</p>
+					</form>
+				</article>
+			</div>
+		</div>
+
+
+	</section>
+
+</body>
+</html>

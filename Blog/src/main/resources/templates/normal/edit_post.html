@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Edit</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" media="all" />
+</head>
+<body>
+	<section>
+		<div class="container_content">
+			<div class="row">
+				<div class="col-md-8 offset-md-3">
+					<form th:action="@{/post/update/{id}(id=${post.id})}" method="post" th:object="${post}">
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Title
+								</label> <input th:value="${post.title}" name="title" type="text" class="form-control"
+								id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the title" required>
+							
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputPassword1" class="form-label">Content</label>
+							<textarea th:value="${post.content}" name="content" class="form-control" placeholder="Type someting here" rows="4" cols="70"
+								id="exampleInputPassword1" required> </textarea>
+						</div>
+						<div class="container text-center">
+						<button type="submit" value="update" class="btn btn-warning">Save Changes</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>
